@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The FX platform and will need a new microservice to store FX transactions.
+These transactions will store how much money we will receive from our customers in the input currency,
+and how much we will pay them out in the output currency.
 
-Things you may want to cover:
+Things you may want to know:
 
-* Ruby version
+* bundle install
 
-* System dependencies
+* rails db:create
 
-* Configuration
+* rails db:migrate
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* rails s
