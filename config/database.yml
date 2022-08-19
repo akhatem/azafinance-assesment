@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: asdasd123
+  host: localhost
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: azafinance_development
+
+test:
+  <<: *default
+  database: azafinance_test
+
+
+production:
+  <<: *default
+  database: azafinance_production
+  username: azafinance
+  password: <%= ENV['AZAFINANCE_DATABASE_PASSWORD'] %>
