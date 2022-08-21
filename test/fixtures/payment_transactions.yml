@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: payment_transactions
+#
+#  id                     :bigint           not null, primary key
+#  user_id                :bigint           not null
+#  transaction_type       :integer
+#  currency               :integer
+#  dot                    :datetime
+#  transaction_identifier :string
+#  transaction_value      :decimal(, )
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#
+
+one:
+  user_id: one
+  transaction_type: 1
+  currency: 1
+  dot: 2022-08-19 03:56:31
+  transaction_identifier: MyString
+  input: 9.99
+  output: 9.99
+
+two:
+  user_id: two
+  transaction_type: 1
+  currency: 1
+  dot: 2022-08-19 03:56:31
+  transaction_identifier: MyString
+  input: 9.99
+  output: 9.99

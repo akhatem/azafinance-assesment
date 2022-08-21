@@ -16,7 +16,10 @@ class RegistrationsController < Devise::RegistrationsController
     params.permit(
       :email,
       :password,
-      :password_confirmation
+      :password_confirmation,
+      :role,
+      :name,
+      :fcm_token,
     )
   end
 end
