@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery unless: -> { request.format.json? }
   respond_to :json
   before_action :authenticate_user
+  rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
   
 
   def authenticate_user
@@ -30,5 +31,11 @@ class ApplicationController < ActionController::Base
 
   def signed_in?
     @current_user_id.present?
+  end
+
+  def record_not_found
+    render json: {
+      error: "Record not found",
+    }, status: 404
   end
 end
