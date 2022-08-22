@@ -20,6 +20,8 @@ class PaymentTransaction < ApplicationRecord
 
   validates :currency, presence: true
   validates :transaction_type, presence: true
+  validates :transaction_value, numericality: { greater_than: 0 }, presence: true
+  validates_uniqueness_of :transaction_identifier
 
   before_create :set_transaction_identifier, :set_date_of_transaction
 
@@ -35,7 +37,7 @@ class PaymentTransaction < ApplicationRecord
     if code.length < 8
       generate_transaction_identifier
     else
-        return code
+      code
     end
   end
 

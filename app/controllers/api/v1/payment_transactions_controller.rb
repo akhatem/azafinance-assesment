@@ -43,6 +43,6 @@ class Api::V1::PaymentTransactionsController < ApplicationController
   private
 
   def payment_transaction_params
-    params.require(:payment_transaction).permit(:transaction_type, :currency)
+    params.require(:payment_transaction).permit(:transaction_type, :currency, :transaction_value)
   end
 end
